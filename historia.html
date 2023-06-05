@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+ 
+  <link rel="shortcut icon" href="perfil.png" type="images">
+
+ 
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="historia.css">
+  <script src="https://kit.fontawesome.com/daa1ba2d6f.js" crossorigin="anonymous"></script>
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:wght@600;700;900&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+<style>
+  #depoimento {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+  height: 50vh;
+  font-size: 1em;
+  font-family: 'Special Elite', cursive !important;
+}
+
+@media screen and (max-width: 645px){
+  #depoimento {
+    margin-top: 200px;
+    margin-bottom: 100px;
+  }
+}
+
+
+.line {
+  border-right: 2px solid rgba(109, 109, 109, 0.75);
+  color: rgba(109, 109, 109, 0.75);
+  font-size: 1em;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.typing-animation {
+animation: linkcursor 500ms steps(40) infinite normal; 
+/* typing 6s steps(40) 1s normal both; */
+}
+
+
+@keyframes linkcursor {
+from { 
+  border-right-color: rgba(109, 109, 109, 0.75);
+}
+to {
+ border-right-color: transparent;
+}
+}
+
+@keyframes typing {
+from { 
+  width: 0;
+}
+to {
+ width: 100%;
+}
+}
+
+
+</style>
+<body>
+
+
+  <nav>
+    <div class="nav-bar">
+        <i class='bx bx-menu sidebarOpen' ></i>
+        <img src="perfil.png" class="logo navLogo" style="height: 50px; width: 70px;" alt="Landio logo">
+        <div class="menu">
+            <div class="logo-toggle">
+              <img src="perfil.png" class="logo" style="height: 50px; width: 70px;" alt="Landio logo">
+                <i class='bx bx-x siderbarClose'></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Projeto</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="comentarios.php">comentários</a></li>
+            </ul>
+        </div>
+
+        
+
+        <div class="darkLight-searchBox">
+            <div class="dark-light">
+                <i class='bx bx-moon moon'></i>
+                <i class='bx bx-sun sun'></i>
+            </div>
+
+            <div class="searchBox">
+               <div class="searchToggle">
+                <i class='bx bx-x cancel'></i>
+                <i class='bx bx-search search'></i>
+               </div>
+
+                <div class="search-field">
+                    <input type="text" placeholder="Procurar...">
+                    <i class='bx bx-search'></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+
+const body = document.querySelector("body"),
+  nav = document.querySelector("nav"),
+  modeToggle = document.querySelector(".dark-light"),
+  searchToggle = document.querySelector(".searchToggle"),
+  sidebarOpen = document.querySelector(".sidebarOpen"),
+  siderbarClose = document.querySelector(".siderbarClose");
+
+  let getMode = localStorage.getItem("mode");
+      if(getMode && getMode === "dark-mode"){
+        body.classList.add("dark");
+      }
+
+// js code to toggle dark and light mode
+  modeToggle.addEventListener("click" , () =>{
+    modeToggle.classList.toggle("active");
+    body.classList.toggle("dark");
+
+    // js code to keep user selected mode even page refresh or file reopen
+    if(!body.classList.contains("dark")){
+        localStorage.setItem("mode" , "light-mode");
+    }else{
+        localStorage.setItem("mode" , "dark-mode");
+    }
+  });
+
+// js code to toggle search box
+    searchToggle.addEventListener("click" , () =>{
+    searchToggle.classList.toggle("active");
+  });
+
+  
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click" , () =>{
+nav.classList.add("active");
+});
+
+body.addEventListener("click" , e =>{
+let clickedElm = e.target;
+
+if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+    nav.classList.remove("active");
+}
+});
+
+</script>
+
+<main>
+    <article>
+
+      <!-- 
+        - HERO
+      -->
+
+      
+
+
+      <div class="container" style="height: 20px;">
+
+      </div>
+     
+
+      <div class="wrapper">
+        <div class="tabs_container">
+          <div class="tabs_header">
+            <ul>
+              <li class="active">
+                <span class="icon"><i class="fa-solid fa-mars-and-venus" style="font-size: 25px;"></i></span>
+                <span class="item">Desigualdade</span>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-solid fa-person-dress" style="font-size: 25px;"></i></span>
+                <span class="item">Pioneiras</span>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-regular fa-hand" style="font-size: 25px;"></i></span>
+                <span class="item">Violencia</span>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-solid fa-skull" style="font-size: 25px;"></i></span>
+                <span class="item">Feminicidio</span>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-solid fa-stethoscope" style="font-size: 25px;"></i></span>
+                <span class="item">Enfermagem</span>
+              </li>
+            </ul>
+          </div>
+          <div class="tabs_wrapper">
+            <div class="tabs_content" style="display: block;">
+              <div class="tabs_info">
+                <h3>A desigualdade</h3>
+              
+              
+                <p>A desigualdade de gênero é um fenômeno social estudado pela sociologia que acontece quando ocorre discriminação e/ou preconceito com outra pessoa por conta de seu gênero.</p>
+                  <p>A luta contra a desigualdade de gênero está diretamente relacionada com os direitos humanos. Em uma tentativa de garantir que todos os cidadãos tenham os mesmos direitos civis e políticos, independentemente de raça, condição social ou gênero.</p>
+                  <p>A desigualdade de gênero é um problema antigo, porém atual. Desde os primórdios da humanidade, a maioria dos povos caminhou para o desenvolvimento de sociedades patriarcais, em que o homem detinha o poder de mando e decisão sobre a família. Esse modelo foi transposto do âmbito familiar privado para o âmbito público, fazendo com que sistemas políticos desenvolvessem-se pelo comando masculino.</p>
+                  <p>Durante muito tempo, a mulher foi excluída da participação efetiva nos espaços públicos, do trabalho fora do âmbito doméstico e da possibilidade de desenvolvimento científico e intelectual por meio da educação formal, além de estarem submetidas (isso ainda ocorre) ao poder de homens de sua família, em geral seus pais e maridos. Isso acarretou num problema que urge por solução: a desigualdade fundamentada pelo gênero.</p>
+                  <p>No século XX, as pautas do movimento feminista voltaram-se, primeiro, para a inserção da mulher de classe média no mercado de trabalho e a conciliação da vida profissional com a vida matrimonial, perpetuando a vertente liberal do feminismo. Muitas conquistas surgiram nesse período, como o sufrágio e os direitos trabalhistas, como a licença maternidade. A partir da década de 1960, o feminismo voltou-se para a libertação sexual feminina, ao mesmo tempo em que mulheres negras conciliavam a luta contra o racismo com o feminismo, surgindo o feminismo negro.</p>
+                 <p>Atualmente, os movimentos feministas ganham voz nas redes sociais, mas a desigualdade persiste. A mulher ainda é tratada de maneira desigual em relação ao homem. Os espaços políticos, acadêmicos e científicos e sociais continuam dominados por homens, que são maioria em número na sua ocupação.
+                  </p>
+              </div>
+            </div>
+            <div class="tabs_content" style="display: none;">
+              <div class="tabs_info">
+                <h3>Pioneiras</h3>
+                <div data-slide="slide" class="slide">
+                  <div class="slide-items">
+                    <img src="WhatsApp Image 2023-05-29 at 8.10.44 PM.jpeg" style="max-width: 100%; display: block;" alt="Img 1">
+                    <img src="WhatsApp Image 2023-05-29 at 8.10.44 PM (1).jpeg" style="max-width: 100%; display: block;"alt="Img 2">
+                    <img src="WhatsApp Image 2023-05-29 at 8.10.43 PM.jpeg" style="max-width: 100%; display: block;"alt="Img 3">
+                  </div>
+                  <nav class="slide-nav">
+                    <div class="slide-thumb"></div>
+                    <button class="slide-prev">Anterior</button>
+                    <button class="slide-next">Próximo</button>
+                  </nav>
+                </div>
+                <strong><p>Anna Rosa, pioneira na defesa do direito de voto da mulher</p></strong>
+                  <p>Anna Rosa Termacsics dos Santos foi uma das pioneiras do feminismo no Brasil, tendo publicado em 1868 o “Tratado sobre a emancipação política de mulher e direito de votar”, onde reivindicava o o direito das mulheres em participar do mercado de trabalho, da educação e da política, defendendo o voto feminino como símbolo dessa participação. O livro, em forma de manifesto, questionava os principais argumentos da época para manter a mulher longe da escola, do trabalho e da política, apresentando de forma contundente as falácias que construíam as crenças do senso comum.</p>
+                <strong><div class=""><p>Leolinda, professora, sufragista e indigenista</p></div></strong>
+                  <p>Leolinda Figueiredo Daltro nasceu na Bahia em 14 de julho de 1859 e criou sozinha seus cinco filhos. Ela lutou pela implantação do projeto republicano de Estado, do magistério público e pelos direitos das mulheres. Em 1910, juntamente com outras mulheres, fundou o Partido Republicano Feminino e em 1917 liderou passeata exigindo a extensão do direito de votos às mulheres. </p>
+                <strong><div class=""><p>Maria Lacerda, uma mulher à frente de seu tempo</p></div></strong>
+                  <p>Feminista, anarquista, pacifista e educadora, Maria Lacerda de Moura (1887-1945) é considerada uma das pioneiras do feminismo no Brasil. Sua vasta produção intelectual tratou de temas como a condição feminina, amor livre, direito ao prazer sexual, divórcio, maternidade consciente, prostituição, combate ao clericalismo, ao fascismo e ao militarismo, estabelecendo uma articulação entre a emancipação feminina e a luta pela emancipação do indivíduo no capitalismo.
+                  </p>
+              </div>
+            </div>
+            <div class="tabs_content" style="display: none;">
+              <div class="tabs_info">
+                <h3>A violencia</h3>
+                <center><img src="estatisticas-desigualdade-de-genero-brasil1.png"style="width: 500px; max-width:100%;height:341;">
+                </center>
+                <p>O Brasil ocupa hoje a 5ª posição no ranking mundial em feminicídio, assassinato de uma mulher pela condição de ser mulher, segundo dados do Mapa da Violência 2015 - ONU. No estado do Rio de Janeiro, as mulheres são vítimas em 70% dos atendimentos notificados como agressões físicas nas redes de saúde, em dados extraídos entre janeiro de 2013 e junho de 2016.</p>
+                <p>Os crimes de lesão corporal lideram os números de ações penais mais distribuídas no PJERJ há cinco anos, segundo o Relatório de Dados Compilados que analisa os processos decorrentes de violência doméstica no PJERJ. O agressor é conhecido ou parente das vítimas em 64,2% das notificações e a residência da vítima é o onde ocorrem 52,7% dos casos.</p>
+                <p> A violência praticada contra a mulher, nas diferentes formas como se apresenta hoje, no Brasil e no mundo, em especial aquela que ocorre no ambiente doméstico e familiar, é, sobretudo, consequência da evolução histórica de hábitos culturais fundamentados em discursos patriarcais. Assim inferem muitos profissionais de diferentes áreas de atuação, bem como acadêmicos e agentes políticos que atuam no combate à violência doméstica e de gênero.</p>
+                <p> Nestes contextos, de práticas e hábitos culturais construídos ao longo das incontáveis mudanças de gerações, a condição social da mulher sempre foi de submissão e subjugação familiar ao homem. Muitas formas de violência doméstica contra a mulher são consequência da incompreensão da atual condição feminina, portadora dos mesmos direitos conferidos aos homens.</p>
+                <p> Com direitos e deveres estabelecidos, como na Constituição Federal/88, nas Legislações Complementares e também nos Tratados Internacionais e Convenções, a busca pela efetiva igualdade entre os gêneros e pela erradicação de todas as formas de violência contra a mulher tem se apresentado como a grande mudança de paradigma.
+                  </p>
+              </div>
+            </div>
+            <div class="tabs_content" style="display: none;">
+              <div class="tabs_info">
+                <h3>Feminicidio</h3>
+                <p>Feminicídio é o assassinato de uma mulher pelo simples fato de ser mulher. Os motivos mais comuns são o ódio, o desprezo ou o sentimento de perda do controle e da propriedade sobre as mulheres, comuns em sociedades marcadas pela associação de papéis discriminatórios ao feminino, como é o caso brasileiro.
+                 <p>O Mapa da Violência 2015, elaborado pela Faculdade Latino-Americana de Ciências Sociais (Flacso), aponta um aumento de 54% em dez anos no número de homicídios de mulheres negras, passando de 1.864, em 2003, para 2.875, em 2013.
+                  <p>Com a taxa de 4,8 assassinatos para 100 mil mulheres, o Brasil está entre os países com maior índice de homicídios femininos: ocupa a quinta posição em um ranking de 83 nações. No Brasil, 55,3% desses crimes foram cometidos no ambiente doméstico e 33,2% dos homicidas eram parceiros ou ex-parceiros das vítimas, com base em dados de 2013 do Ministério da Saúde, e do Mapa da Violência 2015 (Flacso).
+                 <p> No dia 9 de março de 2015, foi sancionada a Lei nº. 13.104 que, em linhas gerais, prevê o feminicídio como circunstância qualificadora do crime de homicídio, de autoria da Comissão Parlamentar Mista de Inquérito da Violência contra Mulher. Com a sanção presidencial, o assassinato de mulher por razões de gênero (quando envolver violência doméstica e familiar ou menosprezo e discriminação à condição de mulher) passa a ser incluído entre os tipos de homicídio qualificado. A pena prevista para homicídio qualificado é de reclusão de 12 a 30 anos.
+                  <p>Se, como observamos, o feminicídio não é um acontecimento isolado, fruto de um lapso fortuito de emoção, mas o ponto culminante de uma violência contínua, arraigada no cotidiano das mulheres, não faz sentido que, ao procurar coibir penalmente essa violência de gênero, se exclua justamente sua expressão mais radical. Isso era, não obstante, o que acabava acontecendo com a Lei Maria da Penha. Os crimes que eram qualificados como homicídio escapavam ao seu escopo.
+                 <p>Justifica-se a diferenciação no tratamento do homicídio cometido contra mulheres em razão do seu gênero, não estando prevista a tipificação de um homicídio cometido contra homem, também em razão do seu gênero, se é que tal hipótese possa ser pensada entre nós. É que, como todo jurista sabe, ainda que às vezes alguns pareçam propositadamente esquecer, a igualdade implica o tratamento desigual dos desiguais, a fim de corrigir essa desigualdade. Assim, o machismo e o patriarcalismo arraigados na nossa sociedade, como demonstra farta pesquisa, configuram motivo mais que suficiente para justificar tal tratamento diferenciado. Ideal seria que, um dia, quando já não houvesse violência caracterizada especificamente por questões de gênero, pudéssemos voltar a retirar o crime de feminicídio das nossas codificações. Infelizmente, esse momento parece ainda muito distante.
+                  </p>
+              </div>
+            </div>
+            <div class="tabs_content" style="display: none;">
+              <div class="tabs_info">
+                <h3>Enfermagem</h3>
+                <p>Agressores não se intimidam pelo fato de a maioria dos profissionais ser do sexo feminino, ou por suas condições físicas. Eles atacam profissionais mais velhas, mais frágeis. Atacam até profissionais gestantes. Um absurdo completo!
+                <p>Segundo o Conselho Regional de Enfermagem (Coren) de São Paulo, mais de 70% dos profissionais já foram, de alguma forma, agredidos. Uma pesquisa feita pelo órgão, “Sondagem sobre Violência aos Profissionais de Enfermagem de São Paulo” demonstrou que 87,51% dos profissionais não registram queixa à polícia, 12,49% não levam o caso adiante e só 4,68 obtêm sucesso na resposta.
+                <p> muitos não levam a queixa adiante, não denunciam, por medo de represália da família e do paciente, além de prejuízos e problemas no trabalho.
+                <h3>Depoimentos</h3>
+                <p>Seguem alguns depoimentos coletados de publicações em jornais como “O Dia”, “Diário de São Paulo”, “Folha de São Paulo”, entre outros, de profissionais atacados:</p>
+                <div class="depoimento" id="depoimento" style="font-family: 'Special Elite', cursive;">
+                  <h3 class="line typing-animation">
+                    <p>“ Fui a nocaute com soco, apaguei”.
+                    <p>“E estava grávida de 18 semanas … a paciente partiu para cima de mim, arranhou os meus braços e rasgou o meu jaleco”
+                     <p>“A gente fica até aliviado quando o plantão acaba e só ouviu as ofensas de sempre como:  vagabundo…. eu pago o seu salário”.
+                     <p>“Ele agarrou o meu cabelo e me encheu de tapas porque demoramos a chegar. Fui salva pelo motorista”.
+                     <p>“[…] mas a família começou a me agredir, eram mais de cinco pessoas, recebi chutes no estômago e nas costas … após eu cair continuaram a me chutar na cabeça e por todo o corpo”.
+                      </p>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+      <script>
+
+class SlideStories {
+  constructor(id) {
+    this.slide = document.querySelector(`[data-slide="${id}"]`);
+    this.active = 0;
+    this.init();
+  }
+
+  activeSlide(index) {
+    this.active = index;
+    this.items.forEach((item) => item.classList.remove('active'));
+    this.items[index].classList.add('active');
+    this.thumbItems.forEach((item) => item.classList.remove('active'));
+    this.thumbItems[index].classList.add('active');
+    this.autoSlide();
+  }
+
+  prev() {
+    if (this.active > 0) {
+      this.activeSlide(this.active - 1);
+    } else {
+      this.activeSlide(this.items.length - 1);
+    }
+  }
+
+  next() {
+    if (this.active < this.items.length - 1) {
+      this.activeSlide(this.active + 1);
+    } else {
+      this.activeSlide(0);
+    }
+  }
+
+  addNavigation() {
+    const nextBtn = this.slide.querySelector('.slide-next');
+    const prevBtn = this.slide.querySelector('.slide-prev');
+    nextBtn.addEventListener('click', this.next);
+    prevBtn.addEventListener('click', this.prev);
+  }
+
+  addThumbItems() {
+    this.items.forEach(() => (this.thumb.innerHTML += `<span></span>`));
+    this.thumbItems = Array.from(this.thumb.children);
+  }
+
+  autoSlide() {
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(this.next, 5000);
+  }
+
+  init() {
+    this.next = this.next.bind(this);
+    this.prev = this.prev.bind(this);
+    this.items = this.slide.querySelectorAll('.slide-items > *');
+    this.thumb = this.slide.querySelector('.slide-thumb');
+    this.addThumbItems();
+    this.activeSlide(0);
+    this.addNavigation();
+  }
+}
+
+new SlideStories('slide');
+      </script>
+<script>
+  var tabs = document.querySelectorAll(".tabs_header ul li");
+var tabs_content = document.querySelectorAll(".tabs_content");
+
+tabs.forEach(function(tab, tab_index){
+	tab.addEventListener("click", function(){
+		tabs.forEach(function(tab){
+			tab.classList.remove("active");
+		})
+		tab.classList.add("active");
+
+		tabs_content.forEach(function(content, content_index){
+			if(content_index == tab_index){
+				content.style.display = "block";
+			}
+			else{
+				content.style.display = "none";
+			}
+		})
+
+	})
+})
+</script>
+
+
+<div class="container">
+  <!-- <video src="Untitled video.mp4" style="width: 500px; max-width:100%; border-radius: 20px;" autoplay co></video> -->
+   </div>
+
+   <h2 class="h2 section-title" style="color: #5639AF;">Grandes citações</h2>
+
+   <div class="card1" style="margin-top: 370px;">
+   <div class="card9">
+    <i class="fa1 fa fa-quote-right" aria-hidden="true"></i>
+    <div class="text" style="font-family: 'Special Elite', cursive !important;">
+      “Meu sofrimento se transformou em luta...”
+    </div>
+    <div class="author a1">-Maria da Penha Fernandes</div>
+ </div>
+ <div class="card9">
+    <i class="fa2 fa fa-quote-right" aria-hidden="true"></i>
+    <div class="text" style="font-family: 'Special Elite', cursive !important;">
+      “Vamos pegar nossos livros e nossas canetas, essas são as armas mais poderosas...”
+    </div>
+    <div class="author a2">-Malala Yousafzai</div>
+ </div>
+ <div class="card9">
+  <i class="fa2 fa fa-quote-right" aria-hidden="true"></i>
+  <div class="text" style="font-family: 'Special Elite', cursive !important;">
+    “Pela maior parte da História, ‘anônimo’ foi uma mulher.”
+  </div>
+  <div class="author a2">-Virginia Woolf</div>
+</div>
+   </div>
+
+
+
+
+   <h2 class="h2 section-title" style="color: #5639AF;">Mulheres que fizeram historia</h2>
+
+   <div class="mulheres">
+   <div class="card">
+    <div class="card-image"></div>
+    <div class="card-text">
+      <span class="date">1412-1431</span>
+      <h2>Joana D'arc</h2>
+      <p>Joana d’Arc, foi uma heroína francesa e santa canonizada pela Igreja Católica, no ano de 1920.
+
+        <p>Durante a Guerra dos Cem Anos conseguiu convencer, por meio da fé, um pequeno grupo de soldados a acompanhá-la.
+        
+       <p> Ela teve seu próprio exército, com cerca de 7 mil homens, além da autorização real para marchar até Orleans e livrá-la do cerco inglês.</p>
+    </div> 
+  </div>
+
+  <div class="card rgb">
+    <div class="card-image card2"></div>
+    <div class="card-text card2">
+      <span class="date">1929-1945</span>
+      <h2>Anne Frank</h2>
+      <p>Anne Frank foi uma entre as inumeras crianças judias assassinadas durante o Holocausto. Escondida dos nazistas, Anne manteve um diário no qual escrevia sobre seus medos, suas vivências e suas esperanças, aonde o mesmo foi publicado em diversos idiomas, sendo até hoje utilizado nos currículos de milhares de escolas de ensino fundamental e médio por todo o mundo.</p>
+    </div>
+  </div>
+  <div class="card">
+      <div class="card-image card3"></div>
+      <div class="card-text card3">
+        <span class="date">1867-1934</span>
+        <h2>Maria Curie</h2>
+        <p>A cientista, matemática e física, Marie Sklodowska Curie, foi a primeira mulher do mundo a ganhar um Prêmio Nobel (Quimica). Ainda no pioneirismo, foi também a primeira mulher a lecionar na Universidade de Sourbonne, em Paris.
+
+          A sua principal contribuição para a ciência versa sobre a descoberta da radioatividade e de novos elementos químicos.
+          
+      </div>
+  </div>
+</div>
+  <script src="vanilla-tilt.min.js"></script>
+  <script>
+    VanillaTilt.init(document.querySelectorAll(".card"),{
+      glare: true,
+      reverse: true,
+      "max-glare": 0.15
+    });
+  </script>
+
+   <h2 class="h2 section-title" style="color: #5639AF;">Linha do tempo - Conquistas</h2>
+
+
+<div class="container2">
+  <video class="backgroundvideo" autoplay loop muted>
+    <source src="" type="video/mp4">
+    </video>
+  <div class="timeline" style="margin-top: -80px;">
+    <ul>
+      <li>
+        <div class="timeline-content">
+          <h3 class="date">1827</h3>
+          <h1>1827 – Meninas são liberadas para frequentarem a escola</h1>
+          <p>Quando paramos para refletir que hoje em dia as mulheres brasileiras são a maioria no que se refere ao acesso à formação superior – 25% das mulheres no País ingressam nas universidades, enquanto o número de homens é apenas 18% (segundo relatório Education of Glance 2019, divulgado pela Organização para a Cooperação e Desenvolvimento Econômico), não imaginamos que o acesso à educação básica por muito tempo foi negado às meninas. Foi apenas em 1827, a partir da Lei Geral – promulgada em 15 de outubro – é que mulheres foram autorizadas a ingressar nos colégios e estudassem além da escola primária. </p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-content">
+          <h3 class="date">1879</h3>
+          <h1>1879 – Mulheres conquistam o direito ao acesso às faculdades</h1>
+          <p>Se a possibilidade de ingressar em espaços de educação fundamental já foi tardio para as mulheres, o acesso às faculdades demorou ainda mais. Somente em 1879 é que as portas das universidades foram abertas à presença feminina. Mas isso não impediu que o machismo estrutural da sociedade ainda oprimisse as mulheres que queriam estudar de realizarem seus objetivos, o preconceito ainda foi um mal muito presente na vida das jovens estudantes daquela época. </p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-content">
+          <h3 class="date">1932</h3>
+          <h1>1932 – Mulheres conquistam o direito ao voto</h1>
+          <p>
+Em 1932, o sufrágio feminino foi garantido pelo primeiro Código Eleitoral brasileiro: uma vitória da luta das mulheres que, desde a Constituinte de 1891, pleiteavam o direito ao voto. Essa conquista só foi possível após a organização de movimentos feministas no início do século XX, que atuaram intensa e exaustivamente no movimento sufragista, influenciados, sobretudo, pela luta das mulheres nos EUA e na Europa por direitos políticos.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-content">
+          <h3 class="date">1977</h3>
+          <h1>1977 – A Lei do Divórcio é aprovada</h1>
+          <p>
+            Até o dia 26 de dezembro de 1977, as mulheres permaneciam legalmente presas aos casamentos, mesmo que fossem infelizes em seu dia a dia. Somente a partir da Lei nº 6.515/1977 é que o divórcio tornou-se uma opção legal no Brasil. Porém, é importante ressaltar que anos após a validação da lei, as mulheres divorciadas permaneciam vistas com maus olhos pela sociedade. Esta pressão social fez muitas mulheres optarem por casamentos infelizes e abusivos em vez de pedirem o divórcio. </p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-content">
+          <h3 class="date">1985</h3>
+          <h1>1985 – É criada a primeira Delegacia da Mulher</h1>
+          <p>
+            A Delegacia de Atendimento Especializado à Mulher (DEAM) surge em São Paulo e, logo depois, outras unidades começam a ser implantadas em outros estados. Essas delegacias especializadas da Polícia Civil realizam, essencialmente, ações de proteção e investigação dos crimes de violência doméstica e violência sexual contra as mulheres.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-content">
+          <h3 class="date">1988</h3>
+          <h1>  1988 – A Constituição Brasileira passa a reconhecer as mulheres como iguais aos homens</h1>
+          <p>  
+Foi apenas na Constituição de 1988 que as mulheres passaram a ser vistas pela legislação brasileira como iguais aos homens. Somente após as pressões da pauta feminista, aliada com outros movimentos populares que ganharam as avenidas na luta pela democracia, é que conseguimos vencer uma realidade opressora e fomos incluídas legalmente como cidadãs com os mesmos direitos e deveres dos homens – pelo menos na Constituição. 
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-content">
+          <h3 class="date">2006</h3>
+          <h1>2006 – É sancionada a Lei Maria da Penha</h1>
+          <p>
+            Maria da Penha, a farmacêutica que deu seu nome à lei, precisou ser vítima de duas tentativas de homicídio e lutar por quase 20 anos para que, finalmente, conseguisse colocar seu ex-marido criminoso atrás das grades. Definitivamente, essa é uma das conquistas do feminismo mais importantes para as mulheres brasileiras. A Lei nº 11.340/2006 foi sancionada para combater a violência contra a mulher.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-content">
+          <h3 class="date">2015</h3>
+          <h1> 2015 – É aprovada a Lei do Feminicídio</h1>
+          <p>
+           
+No dia 9 de março de 2015, a Constituição Federal reconheceu a partir da Lei nº 13.104/2015 o feminicídio como um crime de homicídio qualificado.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-content">
+          <h3 class="date">2018</h3>
+          <h1>2018 – A importunação sexual feminina passou a ser considerada crime</h1>
+          <p>
+            
+Ser mulher ainda – e infelizmente – é motivo para vivenciar situações de assédio e violência no dia a dia, no ônibus, em aplicativos de carros particulares ou numa simples ida ao mercado. A ocorrência deste tipo de prática contra as mulheres é tanta que a pauta feminista precisou incluir em suas ações a defesa da lei que caracteriza o assédio como crime (Lei nº 13.718/2018).
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-content">
+          <h3 class="date">2021</h3>
+          <h1>2021 – É criada lei para prevenir, reprimir e combater a violência política contra a mulher</h1>
+          <p>
+            
+A Lei 14.192/21 estabelece normas para prevenir, reprimir e combater a violência política contra a mulher ao longo das eleições e durante o exercício de direitos políticos e de funções públicas. É violência política contra as mulheres toda ação, conduta ou omissão com a finalidade de impedir, obstaculizar ou restringir os direitos políticos.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+<script>
+$(".card").click(function () {
+  $(".card").removeClass("active");
+  $(this).addClass("active");
+});
+</script>
+
+
+
+
+
+
+
+
+  <footer>
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="perfil.png" style="height: 50px; width: 70px;" alt="Landio logo">
+          </a>
+
+          <p class="footer-text">
+            <p>Somos um grupo no qual desenvolvemos um site para abordar as questões de desigualdade de genero, um trabalho desenvolvido para fins academicos como atividade complementar para a formação em bacharel em Enfermagem.</p>
+           
+          </p>
+
+          <br><br>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+
+        
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-item-title">Paginas</p>
+            </li>
+
+            <li>
+              <a href="index.html" class="footer-link">Projeto</a>
+            </li>
+
+            <li>
+              <a href="historia.html" class="footer-link">Historia</a>
+            </li>
+
+            <li>
+              <a href="comentarios.php" class="footer-link">Comentários</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Suporte</a>
+            </li>
+
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; 2023 <a href="">#Aceleraigualdade</a>. Direitos reservados
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+ 
+  <link rel="shortcut icon" href="perfil.png" type="images">
+
+ 
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:wght@600;700;900&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+ 
+
+  
+  <nav>
+    <div class="nav-bar">
+        <i class='bx bx-menu sidebarOpen' ></i>
+        <img src="perfil.png" class="logo navLogo" style="height: 50px; width: 70px;" alt="Landio logo">
+        <div class="menu">
+            <div class="logo-toggle">
+              <img src="perfil.png" class="logo" style="height: 50px; width: 70px;" alt="Landio logo">
+                <i class='bx bx-x siderbarClose'></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Projeto</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="comentarios.php">comentários</a></li>
+            </ul>
+        </div>
+
+        
+
+        <div class="darkLight-searchBox">
+            <div class="dark-light">
+                <i class='bx bx-moon moon'></i>
+                <i class='bx bx-sun sun'></i>
+            </div>
+
+            <div class="searchBox">
+               <div class="searchToggle">
+                <i class='bx bx-x cancel'></i>
+                <i class='bx bx-search search'></i>
+               </div>
+
+                <div class="search-field">
+                    <input type="text" placeholder="Procurar...">
+                    <i class='bx bx-search'></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+
+const body = document.querySelector("body"),
+  nav = document.querySelector("nav"),
+  modeToggle = document.querySelector(".dark-light"),
+  searchToggle = document.querySelector(".searchToggle"),
+  sidebarOpen = document.querySelector(".sidebarOpen"),
+  siderbarClose = document.querySelector(".siderbarClose");
+
+  let getMode = localStorage.getItem("mode");
+      if(getMode && getMode === "dark-mode"){
+        body.classList.add("dark");
+      }
+
+// js code to toggle dark and light mode
+  modeToggle.addEventListener("click" , () =>{
+    modeToggle.classList.toggle("active");
+    body.classList.toggle("dark");
+
+    // js code to keep user selected mode even page refresh or file reopen
+    if(!body.classList.contains("dark")){
+        localStorage.setItem("mode" , "light-mode");
+    }else{
+        localStorage.setItem("mode" , "dark-mode");
+    }
+  });
+
+// js code to toggle search box
+    searchToggle.addEventListener("click" , () =>{
+    searchToggle.classList.toggle("active");
+  });
+
+  
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click" , () =>{
+nav.classList.add("active");
+});
+
+body.addEventListener("click" , e =>{
+let clickedElm = e.target;
+
+if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+    nav.classList.remove("active");
+}
+});
+
+</script>
+
+<main>
+    <article>
+
+      <!-- 
+        - HERO
+      -->
+
+      <section class="showcase">
+        <header>
+      
+          <div class="toggle"></div>
+        </header>
+        <video src="WhatsApp Video 2023-06-04 at 3.18.22 AM.mp4" muted loop autoplay></video>
+        <div class="overlay"></div>
+        <div class="text" style="margin-left: -20px!important;">
+        <div class="logofundo2"><img src="perfil.png" alt="" height="80px" width="100px" style="margin-right: 100px;" ></div>
+          <h2 data-text="#Aceleraigualdade">#Aceleraigualdade</h2> 
+          <p>“É pelo trabalho que a mulher vem diminuindo a distância que a separava do homem, somente o trabalho poderá garantir-lhe uma independência concreta.” “Ninguém nasce mulher: torna-se mulher.”</p>
+          <a href="index.php">Explorar</a>
+        </div>
+        <ul class="social">
+          <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+          <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+          <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+        </ul>
+      </section>
+
+
+      <div class="container" style="height: 600px; max-height: 20%;">
+
+      </div>
+     
+
+
+      <section class="blog" id="blog">
+        <div class="container">
+
+          <h2 class="h2 section-title" style="color: #5639AF;">Nossos objetivos com o projeto</h2>
+<br><br>
+
+          <ul class="blog-list">
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="blog-banner">
+                  <img src="1_20230419_120218_0000.svg" alt="Best Traveling Place">
+                </figure>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="blog-banner">
+                  <img src="2_20230419_120218_0001.svg" alt="Best Traveling Place">
+                </figure>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="blog-banner">
+                  <img src="3_20230419_120218_0002.svg" alt="Best Traveling Place">
+                </figure>
+
+              </div>
+            </li>
+
+          
+          </ul>
+
+        </div>
+      </section>
+
+      <div class="container" style="height: 20px;">
+
+      </div>
+
+      <section class="about" style="background-color: #5639AF !important;">
+        <div class="container">
+
+          <div class="about-content">
+
+            <div class="about-icon">
+              <img src="perfil.png" style="height: 50px; width: 70px;" alt="Landio logo">
+            </div>
+
+            <h2 class="h2 about-title">Você sabia?</h2>
+
+            <p class="about-text">
+            Um novo relatório da Organização das Nações Unidas (ONU), divulgado nesta quarta-feira (23), expõe números preocupantes sobre o feminicídio no mundo. Em 2021, foram 81,1 mil assassinatos de mulheres. Desse total, 56% foram mortas pelo marido, parceiro ou outro membro da família.
+            </p>
+            <p class="about-text">
+  Em 2021, dos 45 mil feminicídios cometidos por familiares das vítimas, 17,8 mil acontecerem na Ásia, 17,2 mil na África, 7,5 mil na América, 2,5 mil na Europa e 300 na Oceania.
+              </p>
+
+
+           
+
+            <div id="chartdiv"></div>
+
+
+           
+            <script>
+              am5.ready(function() {
+              
+              // Create root element
+              // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+              var root = am5.Root.new("chartdiv");
+              
+              // Set themes
+              // https://www.amcharts.com/docs/v5/concepts/themes/
+              root.setThemes([
+                am5themes_Animated.new(root)
+              ]);
+              
+              // Create chart
+              // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/
+              var chart = root.container.children.push(am5percent.PieChart.new(root, {
+                radius: am5.percent(90),
+                innerRadius: am5.percent(50),
+                layout: root.horizontalLayout
+              }));
+              
+              // Create series
+              // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Series
+              var series = chart.series.push(am5percent.PieSeries.new(root, {
+                name: "Series",
+                valueField: "sales",
+                categoryField: "country"
+              }));
+              
+              // Set data
+              // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
+              series.data.setAll([{
+                country: "Asia",
+                sales: 17800
+              }, {
+                country: "Africa",
+                sales: 17200
+              }, {
+                country: "America",
+                sales: 7500
+              }, {
+                country: "Europa",
+                sales: 2500
+              }, {
+                country: "Oceania",
+                sales: 300
+              }]);
+              
+              // Disabling labels and ticks
+              series.labels.template.set("visible", false);
+              series.ticks.template.set("visible", false);
+              
+              // Adding gradients
+              series.slices.template.set("strokeOpacity", 0);
+              series.slices.template.set("fillGradient", am5.RadialGradient.new(root, {
+                stops: [{
+                  brighten: -0.8
+                }, {
+                  brighten: -0.8
+                }, {
+                  brighten: -0.5
+                }, {
+                  brighten: 0
+                }, {
+                  brighten: -0.5
+                }]
+              }));
+              
+              // Create legend
+              // https://www.amcharts.com/docs/v5/charts/percent-charts/legend-percent-series/
+              var legend = chart.children.push(am5.Legend.new(root, {
+                centerY: am5.percent(50),
+                y: am5.percent(50),
+                layout: root.verticalLayout
+              }));
+              // set value labels align to right
+              legend.valueLabels.template.setAll({ textAlign: "right" })
+              // set width and max width of labels
+              legend.labels.template.setAll({ 
+                maxWidth: 140,
+                width: 140,
+                oversizedBehavior: "wrap"
+              });
+              
+              legend.data.setAll(series.dataItems);
+              
+              
+              // Play initial series animation
+              // https://www.amcharts.com/docs/v5/concepts/animations/#Animation_of_series
+              series.appear(1000, 100);
+              
+              }); // end am5.ready()
+              </script>
+
+
+          </div>
+
+          <ul class="about-list">
+
+            <li>
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <ion-icon name="analytics-outline"></ion-icon>
+                </div>
+              
+                <h3 class="h3 card-title">Consequências</h3>
+
+                <p class="card-text">
+                  Menor acesso à recursos, oportunidades, poderes e direitos.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <ion-icon name="ribbon-outline"></ion-icon>
+                </div>
+
+                <h3 class="h3 card-title">Consequências</h3>
+
+                <p class="card-text">
+                  Discriminação de gênero, como salários inferiores mais até mesmo em trabalhos iguais, a falta de acesso a empregos de liderança.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <ion-icon name="skull-outline"></ion-icon>
+                </div>
+
+                <h3 class="h3 card-title">Consequências</h3>
+
+                <p class="card-text">
+                  Violência doméstica e a taxa que cada vez cresce mais de feminicidios.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <ion-icon name="school-outline"></ion-icon>
+                </div>
+
+                <h3 class="h3 card-title">Consequências</h3>
+
+                <p class="card-text">
+                  Falta de oportunidades educacionais, a falta de recursos para empreender, a falta de autonomia e a falta de representação em posições de poder.
+                </p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <section class="features" id="features">
+        <div class="container">
+          <h2 class="h2 section-title" style="color: #5639AF;">Apresentação do projeto</h2>
+          </div>
+
+          <p class="section-text">
+            Uma breve apresentação de um tema tão importante a ser abordado nos tempos atuais!
+          </p>
+
+          <div class="features-wrapper">
+
+            <div class="container">
+              <iframe class="videoaline" width="560" height="315" src="https://www.youtube.com/embed/GeZ1CngjrT4" title="YouTube video player" frameborder="0" allow=" clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+               </div>
+
+            <div class="features-content">
+
+              <p class="features-content-subtitle">
+                <ion-icon name="sparkles"></ion-icon>
+
+                <span>Desigualdade de Genero</span>
+              </p>
+
+              <h3 class="features-content-title">
+                #ACELERAIGUALDADE <strong>apresentando</strong> Desigualdade de genero <strong>com </strong>Aline Tomaz <strong>
+                  </strong>
+              </h3>
+
+              
+
+              <div class="btn-group">
+                <button class="btn btn-primary">Saber mais</button>
+
+                <button class="btn btn-secondary">contato</button>
+              </div>
+
+              <br><br>
+        
+            </div>
+
+          </div>
+
+          
+
+      </section>
+
+
+
+
+      <img class="bannerfoto" src="2_20230419_120759_0001-min.svg" >
+    
+
+    
+
+
+      <div class="accordian" style="margin-bottom: 500px; margin-top: -20px;">
+        <div class="card">
+            <div class="card-header">
+               <h3>Quem somos?</h3>
+               <span class="fa fa-minus"></span>
+            </div>
+            <div class="card-body active">
+                <p>Somos um grupo no qual desenvolvemos um site para abordar as questões de desigualdade de genero, um trabalho desenvolvido para fins academicos como atividade complementar para a formação em bacharel em Enfermagem.</p>
+            </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+             <h3>O porque do projeto?</h3>
+             <span class="fa fa-plus"></span>
+          </div>
+          <div class="card-body">
+              <p>Com essa pesquisa temos como principal objetivo saber que a desigualdade de gênero é um problema antigo, porém atual, vindo desde os primórdios da humanidade e separamos esse conhecimento para o entendimento de todo aquele que quiser saber mais sobre.</p>
+          </div>
+      </div>
+      <div class="card">
+          <div class="card-header">
+             <h3>O que foi usado?</h3>
+             <span class="fa fa-plus"></span>
+          </div>
+          <div class="card-body">
+              <p>Foram usados fontes de pesquisas, entre artigos, livros e sites. Em programação foram usados Replit, VScode, linguagens: Html, Css, Javascript e Php.</p>
+          </div>
+      </div> 
+    </div>
+  
+  
+  <!-- jqurey code -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function(){
+      $(".card-header").click(function(){
+         // self clicking close
+         if($(this).next(".card-body").hasClass("active")){
+           $(this).next(".card-body").removeClass("active").slideUp()
+          $(this).children("span").removeClass("fa-minus").addClass("fa-plus")	
+         }
+       else{
+       $(".card .card-body").removeClass("active").slideUp()
+       $(".card .card-header span").removeClass("fa-minus").addClass("fa-plus");
+         $(this).next(".card-body").addClass("active").slideDown()
+          $(this).children("span").removeClass("fa-plus").addClass("fa-minus")
+        }
+      })
+    })
+  
+  </script>
+
+
+
+      <!-- 
+        - CONTACT
+      -->
+
+    
+
+    
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - FOOTER
+  -->
+
+  <footer>
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="perfil.png" style="height: 50px; width: 70px;" alt="Landio logo">
+          </a>
+
+          <p class="footer-text">
+            <p>Somos um grupo no qual desenvolvemos um site para abordar as questões de desigualdade de genero, um trabalho desenvolvido para fins academicos como atividade complementar para a formação em bacharel em Enfermagem.</p>
+           
+          </p>
+
+          <br><br>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+
+        
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-item-title">Paginas</p>
+            </li>
+
+            <li>
+              <a href="index.html" class="footer-link">Projeto</a>
+            </li>
+
+            <li>
+              <a href="historia.html" class="footer-link">Historia</a>
+            </li>
+
+            <li>
+              <a href="comentarios.php" class="footer-link">Comentários</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Suporte</a>
+            </li>
+
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; 2023 <a href="">#Aceleraigualdade</a>. Direitos reservados
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
